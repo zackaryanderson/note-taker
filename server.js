@@ -1,5 +1,5 @@
 //initialize all required information. Port is assigned by express or 3001 if not assigned by express
-const express = requre('express');
+const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const path = require('path');
@@ -13,11 +13,11 @@ app.use(express.json());
 
 //link to index.html page on server load
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 //link to notes.html page when called for
 app.get('/notes', (req,res) => {
-    res.sendFile(path.join(__dirname, './Develop/public/notes.html'));
+    res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
 app.listen(PORT, () => {
