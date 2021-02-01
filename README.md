@@ -10,7 +10,12 @@
 
   ## Description
 
-  For this project, I wrote the back-end of the application so that a user can store note information on a web hosted server so that the information can be accessed anywhere. The user can save new notes as well as view old notes. 
+  For this project, I wrote the back-end of the Note Taker application so that a user can store note information on a web hosted server so that the information can be accessed anywhere. The user can save new notes as well as view old notes. 
+  
+  Software Used:
+  -Javascript
+  -HTML
+  -CSS
   
   ![License Badge](https://img.shields.io/badge/license-MIT-brightgreen)
   
