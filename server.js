@@ -10,7 +10,7 @@ const fs = require('fs');
 //make all information on public accessible to the server.
 app.use(express.static('public'));
 //make the server able to parse nested json data from the client or server storage 
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 //parse incoming JSON data
 app.use(express.json());
 
@@ -19,14 +19,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 //link to notes.html page when called for
-app.get('/notes', (req,res) => {
+app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
 //get json data from api on /api/notes call
 app.get('/api/notes', (req, res) => {
     res.json(notes);
-    console.log(notes);
+    //console.log(notes);
 });
 
 //handler for post requests to the server
@@ -45,8 +45,8 @@ app.post('/api/notes', (req, res) => {
     );
 
     res.json(newNote);
-    console.log(newNote);
 });
+
 
 app.listen(PORT, () => {
     console.log(`API server now running on port ${PORT}!`);
