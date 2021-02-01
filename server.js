@@ -5,6 +5,7 @@ const app = express();
 const path = require('path');
 const notes = require("./db/db.json");
 const uniqid = require('uniqid');
+const fs = require('fs');
 
 //make all information on public accessible to the server.
 app.use(express.static('public'));
@@ -32,9 +33,17 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
     //assign id to post request for call-back
     req.body.id = uniqid();
-    console.log(req.body.id);
+
     const newNote = req.body;
+    //add new note to notes body
     notes.push(newNote);
+
+    //write notes to db.json to update notes data
+    fs.writeFileSync(
+        path.join(__dirname, "./db/db.json"),
+        JSON.stringify({ notes: notes }, null, 2)
+    );
+
     res.json(newNote);
     console.log(newNote);
 });
