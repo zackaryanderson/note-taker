@@ -5,9 +5,14 @@
       "text": "Test text"
     },
     {
+      "title": "Test Title",
+      "text": "Test text",
+      "id": "bwr3s7iybkklufjfh"
+    },
+    {
       "title": "new note",
-      "text": "new note text",
-      "id": "bwr3s7ikbkkltqcrl"
+      "text": "this is a new note",
+      "id": "bwr3s7iybkklug1mz"
     }
   ]
 }
